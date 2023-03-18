@@ -42,8 +42,8 @@ def _get_part_text(text: str, start: int, size: int) -> tuple[str, int]:
 def prepare_book(path: str) -> None:
     with open(path) as f:
         text = f.read()
-    page = 1
-    start = 0
+    page: int = 1
+    start: int = 0
 
     while start < len(text):
         page_text, page_len = _get_part_text(text, start, PAGE_SIZE)
