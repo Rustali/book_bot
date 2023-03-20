@@ -5,7 +5,7 @@ from services.file_handling import book
 
 
 # Клавиатура для создания закладок пользователя
-def create_bookmarks_keyboatd(*args: int) -> InlineKeyboardMarkup:
+def create_bookmarks_keyboard(*args: int) -> InlineKeyboardMarkup:
     # Создаем объект клавиатуры
     kb_builder: InlineKeyboardBuilder = InlineKeyboardBuilder()
 
