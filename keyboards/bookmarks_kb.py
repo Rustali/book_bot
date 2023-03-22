@@ -32,7 +32,7 @@ def create_edit_keyboard(*args: int) -> InlineKeyboardMarkup:
     for button in sorted(args):
         kb_builder.row(InlineKeyboardButton(
             text=f'{LEXICON["del"]} {button} - {book[button][:100]}',
-            calback_data=f'{button}del'
+            callback_data=f'{button}del'
         ))
     # Добавляем в конец клавиатуры кнопку "Отменить"
     kb_builder.row(InlineKeyboardButton(

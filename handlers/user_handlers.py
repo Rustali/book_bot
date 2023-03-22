@@ -65,11 +65,11 @@ async def process_continue_command(message: Message):
 # список сохраненных закладок, если они есть или сообщение о том, что закладок нет
 @router.message(Command(commands='bookmarks'))
 async def process_bookmarks_command(message: Message):
-    if users_db[message.from_user.id]['bookmarks']:
+    if users_db[message.from_user.id]["bookmarks"]:
         await message.answer(
             text=LEXICON[message.text],
             reply_markup=create_bookmarks_keyboard(
-                *users_db[message.from_user.id]['bookmarks']
+                *users_db[message.from_user.id]["bookmarks"]
             )
         )
     else:
@@ -143,7 +143,7 @@ async def process_bookmark_press(callback: CallbackQuery):
 async def process_edit_press(callback: CallbackQuery):
     await callback.message.edit_text(
         text=LEXICON[callback.data],
-        reply_markup=create_edit_keyboard(*users_db[callback.from_user.id]['bookmarks'])
+        reply_markup=create_edit_keyboard(*users_db[callback.from_user.id]["bookmarks"])
     )
     await callback.answer()
 
