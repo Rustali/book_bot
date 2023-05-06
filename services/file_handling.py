@@ -40,7 +40,7 @@ def _get_part_text(text: str, start: int, size: int) -> tuple[str, int]:
 
 # Функция, формирующая словарь книги
 def prepare_book(path: str) -> None:
-    with open(path) as f:
+    with open(path, encoding='utf-8') as f:
         text = f.read()
     page: int = 1
     start: int = 0
